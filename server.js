@@ -101,6 +101,6 @@ app.put('/api/classes/:id', (req, res) => {
   console.log(`Updated Class ${param}`);
 });
 
-app.listen(PORT || 4000, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
