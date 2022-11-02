@@ -1,5 +1,4 @@
 const express = require('express');
-const morgan = require('morgan');
 const app = express();
 const PORT = 4000;
 
@@ -38,12 +37,6 @@ let classes = [
 ];
 
 app.use(express.json());
-
-morgan.token('type', (req, res) => JSON.stringify(req.body));
-
-app.use(
-  morgan(':method :url :status :res[content-length] - :response-time ms :type')
-);
 
 app.get('/', (req, res) => {
   res.send('Homepage');
